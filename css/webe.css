@@ -8,6 +8,16 @@ body {
   margin: 0;
 }
 
+.my-element {
+  opacity: 0;
+}
+
+@media (min-width: 1000px) {
+  .my-element {
+    width: 1000px !important;
+  }
+}
+
 .approach-card {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 12px;
