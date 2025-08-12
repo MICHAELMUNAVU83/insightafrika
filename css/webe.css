@@ -8,6 +8,16 @@ body {
   margin: 0;
 }
 
+.my-element {
+  opacity: 0;
+}
+
+@media (min-width: 1024px) {
+  .my-element {
+    width: 1000px !important;
+  }
+}
+
 .approach-card {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 12px;
@@ -1518,7 +1528,7 @@ textarea.w-select {
   }
 }
 
-.helvitic{
+.helvitic {
   font-family: Helvetica Neue, Helvetica, Ubuntu, Segoe UI, Verdana, sans-serif;
 }
 
@@ -3755,11 +3765,19 @@ blockquote {
 
 .footer-wrapper {
   grid-template-rows: auto;
-  grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr; /* Mobile: 1 column */
   grid-auto-columns: 1fr;
   width: 100%;
   margin-bottom: 60px;
   display: grid;
+  gap: 20px; /* Add some spacing between grid items */
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 768px) {
+  .footer-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .white-text {
@@ -4948,7 +4966,9 @@ blockquote {
 }
 
 .image-testimonials {
-  object-fit: cover;
+  object-fit: contain;
+
+  object-position: center;
   border-radius: 10px;
   width: 100%;
   height: 350px;
